@@ -104,6 +104,11 @@ a {
 }
 
 .link-item {
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+  max-width: 100%; /* Adjust the maximum width as a percentage */
+  display: inline-block; /* Force inline block display */
   background-color: #1e1e1e;
   padding: 20px;
   margin-bottom: 20px;
@@ -131,4 +136,10 @@ a {
 
 .link-delete:hover {
   color: #ff8787;
+}
+
+.success {
+  color: #5effc4;
+  text-align: center;
+  margin-top: 10px;
 }

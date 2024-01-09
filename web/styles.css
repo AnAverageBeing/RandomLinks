@@ -1,0 +1,134 @@
+/* Reset default margin and padding */
+html,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a unique font and basic styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #0a0a0a;
+  color: #eee;
+}
+
+/* Header styles */
+header {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Main styles */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+a {
+    color: #5effc4; /* Default color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #ff87b1; /* Color change on hover */
+  }
+
+/* Input and button styles */
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#link-input {
+  padding: 12px;
+  margin-right: 10px;
+  width: 70%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  background-color: transparent;
+}
+
+#add-button,
+#fetch-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ff5e5e;
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#add-button:hover,
+#fetch-button:hover {
+  background-color: #ff8787;
+}
+
+/* Error message styles */
+.error {
+  color: #ff8787;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* List styles */
+#links-list {
+  list-style: decimal;
+  font-weight: bolder;
+  padding: 0;
+}
+
+.link-item {
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  border-left: 5px solid transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.link-item:hover {
+  background-color: #2e2e2e;
+  border-left-color: #ff5e5e;
+}
+
+.link-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.link-delete {
+  margin-left: 10px;
+  color: #ff5e5e;
+  cursor: pointer;
+}
+
+.link-delete:hover {
+  color: #ff8787;
+}

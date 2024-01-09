@@ -93,6 +93,17 @@ func addLink(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"error": ""})
 }
 
+func fetchTotalLinks(c *gin.Context) {
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM links").Scan(&count)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error fetching total links"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"error": "", "totalLinks": count})
+}
+
 func isURLValid(url string) bool {
 	resp, err := http.Head(url)
 	if err != nil || resp.StatusCode != http.StatusOK {
@@ -114,6 +125,7 @@ func main() {
 	{
 		api.GET("fetch", fetchLinks)
 		api.POST("add", addLink)
+		api.GET("total", fetchTotalLinks)
 	}
 
 	port := os.Getenv("PORT")

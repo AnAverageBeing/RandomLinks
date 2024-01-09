@@ -5,7 +5,43 @@ document.addEventListener("DOMContentLoaded", () => {
   addButton.addEventListener("click", addLink);
   fetchButton.addEventListener("click", fetchLinks);
 
-  fetchLinks(); // Fetch links when the page loads
+  fetchLinks();
+  fetchTotalLinks();
+
+      // Function to animate count from 0 to the given number in a specific duration
+      function animateCount(element, countTo, duration) {
+        let start = 0;
+        const increment = Math.ceil(countTo / (duration / 100)); // Increment calculation based on duration
+
+        const timer = setInterval(() => {
+            start += increment;
+            element.textContent = `Total Links = ${start}`;
+            if (start >= countTo) {
+                clearInterval(timer);
+                element.textContent = `Total Links = ${countTo}`;
+            }
+        }, 100);
+    }
+
+    function fetchTotalLinks() {
+        fetch('/api/total')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch total links');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const totalLinksElement = document.getElementById('total-links');
+            const countTo = data.totalLinks;
+            const duration = 3000; // 3 seconds
+
+            animateCount(totalLinksElement, countTo, duration);
+        })
+        .catch(error => {
+            console.error('Error fetching total links:', error);
+        });
+    }
 
   function truncateText(text, maxLength) {
     if (text.length > maxLength) {

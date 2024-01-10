@@ -1,13 +1,13 @@
-/* Reset default margin and padding */
-html,
-body,
-ul {
+/* CSS Done by chatgpt cuz i am dumb */
+
+/* Reset default margin, padding, and box-sizing */
+html, body, ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Set a unique font and basic styles */
+/* Set a unique font, basic styles, and background */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -31,27 +31,29 @@ main {
   padding: 20px;
 }
 
+/* Section styles */
 .section {
   margin-bottom: 30px;
 }
 
-h1,
-h2 {
+/* Heading styles */
+h1, h2 {
   text-align: center;
   font-weight: 600;
   color: #fff;
 }
 
+/* Link styles */
 a {
-    color: #5effc4; /* Default color for links */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth color transition */
-    font-weight: bold;
-  }
-  
-  a:hover {
-    color: #ff87b1; /* Color change on hover */
-  }
+  color: #5effc4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff87b1;
+}
 
 /* Input and button styles */
 .input-group {
@@ -72,8 +74,7 @@ a {
   background-color: transparent;
 }
 
-#add-button,
-#fetch-button {
+#add-button, #fetch-button {
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
@@ -84,8 +85,7 @@ a {
   transition: background-color 0.3s ease;
 }
 
-#add-button:hover,
-#fetch-button:hover {
+#add-button:hover, #fetch-button:hover {
   background-color: #ff8787;
 }
 
@@ -104,11 +104,11 @@ a {
 }
 
 .link-item {
-  white-space: nowrap; /* Prevent line breaks */
-  overflow: hidden; /* Hide overflowing content */
-  text-overflow: ellipsis; /* Show ellipsis for overflow */
-  max-width: 100%; /* Adjust the maximum width as a percentage */
-  display: inline-block; /* Force inline block display */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
   background-color: #1e1e1e;
   padding: 20px;
   margin-bottom: 20px;
